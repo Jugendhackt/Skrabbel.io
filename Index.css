@@ -11,6 +11,16 @@ h1 {
 	font-family: Tahoma;
 }
 
+.BildLinks {
+	float: left;
+	margin-left: 20vw;
+}
+
+.BildRechts {
+	float: right;
+	margin-right: 20vw;
+}
+
 .Container {
 	position: relative;
 }
