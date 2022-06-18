@@ -1,6 +1,7 @@
 CREATE TABLE Insects
 (
     InsectID INTEGER NOT NULL, 
+    FarbID INTEGER NOT NULL,
     InsectName VARCHAR(20),
     Lebensraum VARCHAR(30),
     Farbe VARCHAR(10),
@@ -8,7 +9,7 @@ CREATE TABLE Insects
     Verbreitung VARCHAR(20)
 );
 
-INSERT INTO Insects (InsectID, InsectName, Farbe, Verbreitung, Lebensraum, Nahrung) VALUES
+INSERT INTO Insects (InsectID, InsectName, FarbeID, Verbreitung, Lebensraum, Nahrung, Bedrohung) VALUES
 (1, Ameise, braun/schwarz/rot, Weltweit, Wald/Erde/Gaerten/Staedte, Insekten/Pflanzen/Lebensmittel)
 (2, Bettwanze,Rot-Schwarz, Weltweit, Tropen, Blut)
 (3, Eintagsfliege, braun/grau, Europa, Wassernähe, Algen)
@@ -17,7 +18,48 @@ INSERT INTO Insects (InsectID, InsectName, Farbe, Verbreitung, Lebensraum, Nahru
 (6, Zecke, Schwarz, Weltweit, Graeser/Buesche/Unterholz, Blut)
 (7, Honigbiene, Schwarz/Gelb, Weltweit, Wiese/Wald, Nektar/Pollen)
 (8, Wandelndes Blatt, Gruen, Weltweit, Tropen/Subtropen,Blaetter/Pflanzen/Fruechte)
-(9, Marienkaefer, Rot/Schwarz, Weltweit, Gaerten/Heiden/Waelder, Blattlaeuse)
+(9, Marienkaefer, Rot/Schwarz, Weltweit, Gaerten/Heiden/Waelder, Blattläuse)
 (10, Wespe, Gelb/Schwarz, Weltweit, Waelder/Wiesen, Nektar)
+CREATE TABLE Farben
+(
+    FarbeID INTEGER NOT NULL,
+    Farbe VARCHAR(10)
+);
+
+INSERT INTO Farben (FarbeID, Farbe) VALUES
+(1, braun),
+(2, schwarz),
+(3, rot),
+(4, grau),
+(5, gelb),
+(6, grün);
+
+CREATE TABLE Lebensraum
+(
+    LebensraumID INTEGER NOT NULL,
+    Lebensraum VARCHAR(15)
+);
+
+CREATE TABLE Nahrung
+(
+    NahrungID INTEGER NOT NULL,
+    Nahrung VARCHAR(10)
+);
+
+
+
+
 ALTER TABLE Insects
-  ADD PRIMARY KEY (InsectID);
+  ADD PRIMARY KEY (InsectID),
+  ADD FOREIGN KEY (FarbeID) REFERENCES Farben(FarbeID),
+  ADD FOREIGN KEY (LebensraumID) REFERNCES Lebensraum(LebensraumID),
+  ADD FOREIGN KEY (NahrungID) REFERENCES Nahrung(NahrungID);
+  
+ALTER TABLE Farben
+    ADD PRIMARY KEY(FarbeID);
+    
+ALTER TABLE Lebensraum
+    ADD PRIMARY KEY(LebensraumID);
+
+ALTER TABLE Nahrung
+    ADD PRIMARY KEY(NahrungID);
