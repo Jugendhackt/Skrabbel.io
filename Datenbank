@@ -6,10 +6,12 @@ CREATE TABLE Insects
     Lebensraum VARCHAR(30),
     Farbe VARCHAR(10),
     Nahrung VARCHAR(15),
-    Verbreitung VARCHAR(20)
+    Verbreitung VARCHAR(20),
+    Bedrohung VARCHAR(20),
+    Bild VARCHAR(50)
 );
 
-INSERT INTO Insects (InsectID, InsectName, FarbeID, Verbreitung, Lebensraum, Nahrung, Bedrohung) VALUES
+INSERT INTO Insects (InsectID, InsectName, FarbeID, Verbreitung, Lebensraum, Nahrung, Bedrohung, Bild) VALUES
 (1, Ameise, braun/schwarz/rot, Weltweit, Wald/Erde/Gaerten/Staedte, Insekten/Pflanzen/Lebensmittel)
 (2, Bettwanze,Rot-Schwarz, Weltweit, Tropen, Blut)
 (3, Eintagsfliege, braun/grau, Europa, Wassernähe, Algen)
