@@ -1,0 +1,45 @@
+body {
+	background-color: #8fcb9b;
+}
+
+h1 {
+	color: #eae6e5;
+	font-size: 50px;
+	width: 100%;
+	text-align: center;
+	margin-top: 25px;
+	font-family: Tahoma;
+}
+
+.Container {
+	position: relative;
+}
+
+.Boxen {
+	border-style: solid;
+	border-color: #5b9279;
+	border-width: 5px;
+	border-radius: 15px;
+	position: absolute;
+}
+
+.Malen{
+	height: 70vh;
+	width: 63vw;
+	top: auto;
+	left: 2vw;
+}
+
+.Chat {
+	height: 85vh;
+	width: 30vw;
+	top: auto;
+	left: 66vw;
+}
+
+.Leaderboard{
+	height: 13vh;
+	width: 63vw;
+	top: 72vh;
+	left: 2vw;
+}
