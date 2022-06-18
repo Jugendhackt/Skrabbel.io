@@ -12,16 +12,16 @@ CREATE TABLE Insects
 );
 
 INSERT INTO Insects (InsectID, InsectName, FarbeID, Verbreitung, Lebensraum, Nahrung, Bedrohung, Bild) VALUES
-(1, Ameise, braun/schwarz/rot, Weltweit, Wald/Erde/Gaerten/Staedte, Insekten/Pflanzen/Lebensmittel)
-(2, Bettwanze,Rot-Schwarz, Weltweit, Tropen, Blut)
-(3, Eintagsfliege, braun/grau, Europa, Wassernähe, Algen)
-(4, Kakerlake, braun, Tropen/Subtropen, Waelder/Wiesen, Allesfresser)
-(5, Schnecke,grau/braun/schwarz, Weltweit, Boden/Wiesen/Parks, Pflanzen)
-(6, Zecke, Schwarz, Weltweit, Graeser/Buesche/Unterholz, Blut)
-(7, Honigbiene, Schwarz/Gelb, Weltweit, Wiese/Wald, Nektar/Pollen)
-(8, Wandelndes Blatt, Gruen, Weltweit, Tropen/Subtropen,Blaetter/Pflanzen/Fruechte)
-(9, Marienkaefer, Rot/Schwarz, Weltweit, Gaerten/Heiden/Waelder, Blattläuse)
-(10, Wespe, Gelb/Schwarz, Weltweit, Waelder/Wiesen, Nektar)
+(1, Ameise, braun/schwarz/rot, Weltweit, Wald/Erde/Gaerten/Staedte, Insekten/Pflanzen/Lebensmittel, Abholzung, ),
+(2, Bettwanze,Rot-Schwarz, Weltweit, Tropen, Blut, ),
+(3, Eintagsfliege, braun/grau, Europa, Wassernähe, Algen, durch die Industrie verunreinigte Gewässer, ),
+(4, Kakerlake, braun, Tropen/Subtropen, Waelder/Wiesen, Allesfresser, ),
+(5, Schnecke,grau/braun/schwarz, Weltweit, Boden/Wiesen/Parks, Pflanzen), ,
+(6, Zecke, Schwarz, Weltweit, Graeser/Buesche/Unterholz, Blut, ),
+(7, Honigbiene, Schwarz/Gelb, Weltweit, Wiese/Wald, Nektar/Pollen), ,
+(8, Wandelndes Blatt, Gruen, Weltweit, Tropen/Subtropen,Blaetter/Pflanzen/Fruechte, ),
+(9, Marienkaefer, Rot/Schwarz, Weltweit, Gaerten/Heiden/Waelder, Blattläuse, ),
+(10, Wespe, Gelb/Schwarz, Weltweit, Waelder/Wiesen, Nektar, Pestizide, )
 CREATE TABLE Farben
 (
     FarbeID INTEGER NOT NULL,
