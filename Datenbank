@@ -1,0 +1,15 @@
+CREATE TABLE Insects
+(
+    InsectID INTEGER NOT NULL, 
+    InsectName VARCHAR(20),
+    Lebensraum VARCHAR(30),
+    Farbe VARCHAR(10),
+    Nahrung VARCHAR(15),
+    Alter INTEGER
+);
+
+INSERT INTO Insects (InsectID, InsectName, Farbe, Lebensraum, Nahrung, Alter) VALUES
+(1, 
+
+ALTER TABLE Insects
+  ADD PRIMARY KEY (InsectID);
