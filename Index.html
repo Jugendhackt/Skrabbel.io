@@ -1,31 +1,95 @@
-<!--Skrabbel.io - das Grundgeruest-->
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="Index.css">
-		<link rel="shortcut icon" href="Logo.svg">
-		<title>Skrabbel.io</title>
-	</head>
-	
-	<body>
-	    
-		<img class="BildLinks" width=100px height=100px src="Schnecke.svg">
-		<img class="BildRechts" width=80px height=80px src="Kaefer.svg">
-		<h1>Skrabbel.io</h1>
-				
-		
-		<div class="Container">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="Index.css">
+	<link rel="shortcut icon" href="Logo.svg">
+	<title>Skrabbel.io</title>
+</head>
+
+<body>
+
+	<img class="BildLinks" width=100px height=100px src="Schnecke.svg">
+	<img class="BildRechts" width=80px height=80px src="Kaefer.svg">
+	<h1>Skrabbel.io</h1>
+
+
+	<div class="Container">
 		<div class="Malen Boxen">
-		<p>Hier wird gemalt.</p>
+			<canvas width="1215" height="525" id="canvas">
+			</canvas>
+			<script>
+				window.addEventListener('load', () => {
+
+					//resize(); // Resizes the canvas once the window loads
+					document.addEventListener('mousedown', startPainting);
+					document.addEventListener('mouseup', stopPainting);
+					document.addEventListener('mousemove', sketch);
+					//window.addEventListener('resize', resize);
+
+				});
+				const canvas = document.querySelector('#canvas');
+				const rect = canvas.getBoundingClientRect();
+				console.log(rect)
+				canvas.style = "background-color: white"
+				const ctx = canvas.getContext('2d');
+				let coord = { x: 0, y: 0 };
+				let paint = false;
+				function getPosition(event) {
+					coord.x = event.clientX - rect.left;
+					coord.y = event.clientY - rect.top;
+				}
+
+				// The following functions toggle the flag to start
+				// and stop drawing
+				function startPainting(event) {
+					paint = true;
+					getPosition(event);
+				}
+				function stopPainting() {
+					paint = false;
+				}
+				function sketch(event) {
+					if (!paint) return;
+					ctx.beginPath();
+
+					ctx.lineWidth = 5;
+
+					// Sets the end of the lines drawn
+					// to a round shape.
+					ctx.lineCap = 'round';
+
+					ctx.strokeStyle = 'black';
+
+					// The cursor to start drawing
+					// moves to this coordinate
+					ctx.moveTo(coord.x, coord.y);
+
+					// The position of the cursor
+					// gets updated as we move the
+					// mouse around.
+					getPosition(event);
+
+					// A line is traced from start
+					// coordinate to this coordinate
+					ctx.lineTo(coord.x, coord.y);
+
+					// Draws the line.
+					ctx.stroke();
+				}
+
+			</script>
 		</div>
-		
+
 		<div class="Chat Boxen">
-		<p>Hier wird geschrieben.</p>
+			<p>Hier wird geschrieben.</p>
 		</div>
-		
+
 		<div class="Leaderboard Boxen">
-		<p>Hier wird gewonnen.</p>
+			<p>Hier wird gewonnen.</p>
 		</div>
-		</div>
-	</body>
+	</div>
+</body>
+
 </html>
